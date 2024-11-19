@@ -1,0 +1,60 @@
+{    "AC_1": 210,
+    "DC_R": 48,
+    "DC_B": 50,
+    "T": 30,
+    "alarmas": [
+      {
+        "id": 1,
+        "descripcion": 2,
+        "year": 2024,
+        "mes": 11,
+        "dia": 18,
+        "hora_ini": 12,
+        "min_ini": 0,
+        "seg_ini": 0,
+        "hora_fin": 12,
+        "min_fin": 30,
+        "seg_fin": 0
+      },
+      {
+        "id": 2,
+        "descripcion": 0,
+        "year": 2024,
+        "mes": 11,
+        "dia": 18,
+        "hora_ini": 13,
+        "min_ini": 0,
+        "seg_ini": 0,
+        "hora_fin": 13,
+        "min_fin": 30,
+        "seg_fin": 0
+      },
+      {
+        "id": 3,
+        "descripcion": 0,
+        "year": 2024,
+        "mes": 11,
+        "dia": 18,
+        "hora_ini": 14,
+        "min_ini": 0,
+        "seg_ini": 0,
+        "hora_fin": 14,
+        "min_fin": 30,
+        "seg_fin": 0
+      },
+      {
+        "id": 4,
+        "descripcion": 2,
+        "year": 2024,
+        "mes": 11,
+        "dia": 18,
+        "hora_ini": 15,
+        "min_ini": 0,
+        "seg_ini": 0,
+        "hora_fin": 15,
+        "min_fin": 30,
+        "seg_fin": 0
+      }
+    ]
+  }
+  

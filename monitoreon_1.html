@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #ffffff;
+        }
+
+        .main-container {
+            min-height: 100vh;
+            display: flex;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            flex-direction: column;
+        }
+
+        .main-content {
+            display: flex;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 1250px;
+            margin: 0px auto;
+            flex: 1;
+        }
+
+        .banner {
+            width: 100%;
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            width: 1000px;
+            background-color: #c0c0c000;
+        }
+
+        .cointainer_2 {
+            width: 1000px;
+            background-color: rgba(117, 117, 117, 0);
+        }
+
+        .container .card {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: rgb(8, 72, 102);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .container .card:hover {
+            transform: translateY(-5px);
+            background: rgb(39, 81, 137);
+            box-shadow: 0 5px 20px rgb(106, 106, 187);
+        }
+
+        .box {
+            color: #ffffff;
+        }
+
+        .percent {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: inset 0 0 50px #7f7979;
+            background: #c9c9c9;
+            z-index: 1000;
+        }
+
+        .percent .number {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .percent .number h2 {
+            color: #000000;
+            font-family: Helvetica;
+            font-weight: 700;
+            font-size: 30px;
+            transition: 0.5s;
+        }
+
+        .percent .number span {
+            color: #000000;
+            font-family: Helvetica;
+            font-weight: 700;
+            font-size: 20px;
+            transition: 0.5s;
+        }
+
+        svg {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            z-index: 1000;
+        }
+
+        svg circle {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
+            transform: translate(5px, 5px);
+        }
+
+        h1 {
+            font-family: Helvetica;
+            font-size: 50px;
+            color: #ff0000;
+        }
+        h2 {
+            font-family: Helvetica;
+            font-size: 30px;
+            color: #3b3e43;
+        }
+        p,
+        label {
+            font-family: Helvetica;
+            font-size: 20px;
+            color: #3b3e43;
+
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+
+        <div class="main-container">
+            <img src="banner.jpg"style="width: 100%;">
+            <h2>SISTEMA DE MONITOREO DE SUMINISTRO DE ENERGIA <br>R/E CURIAPO</h2>
+            <div class="main-content">
+                <div class="container">
+                    <div class="card" id="RED_AC" data-value="50">
+                        <div class="box">
+                            RED AC
+                            <div class="percent">
+                                <svg>
+                                    <circle id="circle1" cx="70" cy="70" r="70"></circle>
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                </svg>
+                                <div class="number">
+                                    <h2 id="AC"> 2 </h2><span>RMS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="RECTIFICADOR_DC" data-value="50">
+                        <div class="box">
+                            RECTIFICADOR
+                            <div class="percent">
+                                <svg>
+                                    <circle id="circle2" cx="70" cy="70" r="70"></circle>
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                </svg>
+                                <div class="number">
+                                    <h2 id="DC_R"> 4 </h2><span>V</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="BATERIA_DC" data-value="50">
+                        <div class="box">
+                            BANCO DE BATERIAS
+                            <div class="percent">
+                                <svg>
+                                    <circle id="circle3" cx="70" cy="70" r="70"></circle>
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                </svg>
+                                <div class="number">
+                                    <h2 id="DC_B"> 5 </h2><span>V</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" id="TEMPERATURA" data-value="50">
+                        <div class="box">
+                            TEMPERATURA
+                            <div class="percent">
+                                <svg>
+                                    <circle id="circle4" cx="70" cy="70" r="70"></circle>
+                                    <circle cx="70" cy="70" r="70"></circle>
+                                </svg>
+                                <div class="number">
+                                    <h2 id="T"> 80 </h2><span>°C</span>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cointainer_2">
+                    <h3>ALARMAS ACTIVAS</h3>
+                    <table id="alarmas-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>VARIABLE</th>
+                                <th>DESCRIPCION</th>
+                                <th>INICIO</th>
+                                <th>TIEMPO TRANSCURRIDO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Las filas de alarmas se agregarán aquí mediante JavaScript -->
+                        </tbody>
+                    </table>
+                    <br>
+                      <button>HISTORIAL</button>
+                </div>
+                
+            </div>
+        </div>
+    </center>
+    <script>
+        //<img src="banner.jpg"style="width: 100%;">
+        var bandera1 = 0;
+        var bandera2 = 0;
+        var bandera3 = 0;
+        var bandera4 = 0;
+
+        setInterval(actualizar, 1000);
+        function actualizar() {
+            verificar_mediciones();
+        }
+
+        function cambiarColorCirculos() {
+            document.getElementById('circle1').style.stroke = bandera1 === 0 ? 'green' : 'red';
+            document.getElementById('circle2').style.stroke = bandera2 === 0 ? 'green' : 'red';
+            document.getElementById('circle3').style.stroke = bandera3 === 0 ? 'green' : 'red';
+            document.getElementById('circle4').style.stroke = bandera4 === 0 ? 'green' : 'red';
+        }
+        // Llama a la función para cambiar el color de los círculos
+        cambiarColorCirculos();
+        //funcion que me permite recibir los datos en tiempo real cada 1 seg de las mediciones 
+        function verificar_mediciones() {
+      var AC_Text = document.getElementById('AC');
+      var DC_RText = document.getElementById('DC_R');
+      var DC_BText = document.getElementById('DC_B');
+      var T_Text = document.getElementById('T');
+
+      fetch('/datos.json')
+        .then(response => response.json())
+
+        .then(data => {
+        // Obtener los datos del JSON
+        var { AC_1, DC_R, DC_B, T, alarmas } = data;
+
+        actualizarTEXTO(AC_1, AC_Text);
+          actualizarTEXTO(DC_R, DC_RText);
+          actualizarTEXTO(DC_B, DC_BText);
+          actualizarTEXTO(T, T_Text);
+        // Mostrar alarmas en el HTML
+        var alarmasTableBody = document.getElementById('alarmas-table').getElementsByTagName('tbody')[0];
+        alarmasTableBody.innerHTML = "";
+
+        // Función para obtener la descripción basada en el ID y la descripción
+        function getDescripcion(id, descripcion) {
+            switch (id) {
+                case 1:
+                    return descripcion === 1 ? "FALLA EN RED AC VOLTAJE MENOR A 210V RMS" :
+                           descripcion === 2 ? "FALLA RED AC VOLTAJE MAYOR A 230V RMS" : "";
+                case 2:
+                    return descripcion === 1 ? "FALLA RECTIFICADOR DE VOLTAJE, VOLTAJE MENOR A 45V" :
+                           descripcion === 2 ? "FALLA RECTIFICADOR DE VOLTAJE, VOLTAJE MAYOR A 50V" : "";
+                case 3:
+                    return descripcion === 1 ? "FALLA BANCO DE BATERIA VOLTAJE BAJO , MENOR A 48V" :
+                           descripcion === 2 ? "FALLA BANCO DE BATERIA VOLTAJE ALTO , MAYOR A 56V" : "";
+                case 4:
+                    return descripcion === 1 ? "TEMPERATURA BAJA, MENOR A 16 °C" :
+                           descripcion === 2 ? "TEMPERATURA ALTA, MAYOR A 30 °C" : "";
+                default:
+                    return "";
+            }
+        }
+
+        // Función para obtener la variable basada en el ID
+        function getVariable(id) {
+            switch (id) {
+                case 1:
+                    return "VAC";
+                case 2:
+                case 3:
+                    return "VDC";
+                case 4:
+                    return "°C";
+                default:
+                    return "";
+            }
+        }
+
+        // Mostrar alarmas en el HTML
+        alarmas.forEach(alarma => {
+            if (alarma.descripcion !== 0) {
+                            switch (alarma.id) {
+                                case 1:
+                                    bandera1 = 1;
+                                    break;
+                                case 2:
+                                    bandera2 = 1;
+                                    break;
+                                case 3:
+                                    bandera3 = 1;
+                                    break;
+                                case 4:
+                                    bandera4 = 1;
+                                    break;
+                                default:
+                                    break;
+                            }
+                            
+                
+                var row = alarmasTableBody.insertRow();
+                
+                var idCell = row.insertCell(0);
+                var variableCell = row.insertCell(1);
+                var descripcionCell = row.insertCell(2);
+                var inicioCell = row.insertCell(3);
+                var tiempoTranscurridoCell = row.insertCell(4);
+                
+                idCell.innerHTML = alarma.id;
+                variableCell.innerHTML = getVariable(alarma.id);
+                descripcionCell.innerHTML = getDescripcion(alarma.id, alarma.descripcion);
+                
+                var inicio = new Date(alarma.year, alarma.mes - 1, alarma.dia, alarma.hora_ini, alarma.min_ini, alarma.seg_ini);
+                var fin = new Date(alarma.year, alarma.mes - 1, alarma.dia, alarma.hora_fin, alarma.min_fin, alarma.seg_fin);
+
+                // Formato de inicio: yyyy/mm/dd hh:mm:ss
+                inicioCell.innerHTML = inicio.getFullYear() + '/' + 
+                                       (inicio.getMonth() + 1).toString().padStart(2, '0') + '/' + 
+                                       inicio.getDate().toString().padStart(2, '0') + ' ' + 
+                                       inicio.getHours().toString().padStart(2, '0') + ':' + 
+                                       inicio.getMinutes().toString().padStart(2, '0') + ':' + 
+                                       inicio.getSeconds().toString().padStart(2, '0');
+                
+                // Formato de fin: hh:mm:ss
+                tiempoTranscurridoCell.innerHTML = fin.getHours().toString().padStart(2, '0') + ':' + 
+                                                   fin.getMinutes().toString().padStart(2, '0') + ':' + 
+                                                   fin.getSeconds().toString().padStart(2, '0');
+            }
+        });
+        cambiarColorCirculos();
+    })
+        
+          
+        
+        .catch(error => {
+          console.error('Error al obtener datos:', error);
+        });
+    }
+
+    function actualizarTEXTO(valor, elemento) {
+      elemento.textContent = valor;
+    }
+
+
+       
+
+    </script>
+</body>
+
+</html>
